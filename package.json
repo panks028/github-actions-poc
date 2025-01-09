@@ -4,7 +4,8 @@
   "description": "github actions poc",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/test.js"
+    "test": "mocha test/test.js",
+    "build": "echo 'Build step executed'"
   },
   "repository": {
     "type": "git",
