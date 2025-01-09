@@ -1,0 +1,25 @@
+{
+  "name": "github-actions-poc",
+  "version": "1.0.0",
+  "description": "github actions poc",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panks028/github-actions-poc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/panks028/github-actions-poc/issues"
+  },
+  "homepage": "https://github.com/panks028/github-actions-poc#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mocha": "^11.0.1",
+    "supertest": "^7.0.0"
+  }
+}
