@@ -4,6 +4,7 @@
   "description": "github actions poc",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "mocha test/test.js",
     "build": "echo 'Build step executed'"
   },
@@ -22,5 +23,11 @@
     "express": "^4.21.2",
     "mocha": "^11.0.1",
     "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.3",
+    "globals": "^15.14.0"
   }
 }
