@@ -22,6 +22,7 @@
   "dependencies": {
     "express": "^4.21.2",
     "mocha": "^11.0.1",
+    "structured-clone": "^0.2.2",
     "supertest": "^7.0.0"
   },
   "devDependencies": {
