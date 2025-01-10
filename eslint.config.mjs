@@ -1,4 +1,3 @@
-import 'structured-clone';
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginReact from "eslint-plugin-react";
@@ -9,4 +8,18 @@ export default [
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
+  {
+    settings: {
+      react: {
+        version: "detect", // Automatically detect the React version
+      },
+    },
+  },
+  {
+    env: {
+      node: true, // Define Node.js global variables
+      jest: true, // Define Jest global variables
+    },
+  },
 ];
+
