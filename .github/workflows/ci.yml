@@ -60,3 +60,36 @@ jobs:
 
     - name: Deploy to production
       run: echo "Deploying to production..."
+
+  check-feature-to-develop:
+    if: github.event.pull_request.base.ref == 'develop'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        run: |
+          if [[ "${{ github.head_ref }}" != feature/* ]]; then
+            echo "Pull requests to develop must come from a feature branch."
+            exit 1
+          fi
+
+  check-develop-to-main:
+    if: github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        run: |
+          if [[ "${{ github.head_ref }}" != develop ]]; then
+            echo "Pull requests to main must come from the develop branch."
+            exit 1
+          fi
+
+  check-hotfix-to-main:
+    if: github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        run: |
+          if [[ "${{ github.head_ref }}" != hotfix/* ]]; then
+            echo "Pull requests to main must come from a hotfix branch."
+            exit 1
+          fi
