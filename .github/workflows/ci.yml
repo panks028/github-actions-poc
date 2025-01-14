@@ -73,7 +73,7 @@ jobs:
           fi
 
   check-develop-to-main:
-    if: github.event.pull_request.base.ref == 'main'
+    if: github.event.pull_request.base.ref == 'main' && github.head_ref == 'develop'
     runs-on: ubuntu-latest
     steps:
       - name: Check source branch
@@ -84,7 +84,7 @@ jobs:
           fi
 
   check-hotfix-to-main:
-    if: github.event.pull_request.base.ref == 'main'
+    if: github.event.pull_request.base.ref == 'main' && startsWith(github.head_ref, 'hotfix/')
     runs-on: ubuntu-latest
     steps:
       - name: Check source branch
